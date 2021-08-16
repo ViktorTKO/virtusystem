@@ -1,0 +1,44 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Таблица</title>
+    <style type="text/css">
+        td.block
+        {
+            border: 1px solid black;
+        }
+        TABLE {
+            table-layout: auto;
+            width: 500px; /* Ширина таблицы */
+        }
+        TH {
+            background: #f5f5dc; /* Цвет фона */
+            color: #000000; /* Цвет текста */
+        }
+        td {
+            border: 1px solid #000;
+        }
+        tr td:last-child {
+            width: 1%;
+            white-space: nowrap;
+        }
+         TH {
+            padding: 5px; /* Поля вокруг содержимого ячеек */
+        }
+    </style>
+</head>
+<body>
+<table  cellspacing="4" border="2">
+    <tr>
+        <th>Cерия-Номер</th>
+        <th>Дата заключения</th>
+        <th>Страхователь</th>
+        <th>Премия</th>
+        <th>Срок действия</th>
+    </tr>
+    <tr><td class="block"> <p th:text="${insured.passportSeries}+'-'+${insured.passportNumber}"></p>
+       </td></tr>
+</table>
+</body>
+</html>

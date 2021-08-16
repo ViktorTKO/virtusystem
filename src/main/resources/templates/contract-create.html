@@ -1,0 +1,30 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/html">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Расчет</h1>
+<th><label>Расчет суммы</label><input  th:value="${calculation.sumInsured}"></th>
+<th><label>Срок действия с </label><input type="date" name="calendar" th:value="${calculation.beginningOfContract}"></th>
+<th><label> по </label><input type="date"  name="calendar"  th:value="${calculation.endOfContract}"></th>
+<br><br>
+<th><label>Тип недвижимости </label><select th:value="${calculation.typeOfRealEstate}">
+    <option value="Квартира">Квартира</option>
+    <option value="Дом">Дом</option>
+    <option value="Комната">Комната</option>
+</select> </th>
+<br><br>
+<th><label>Год постройки</label><input th:value="${calculation.yearOfConstruction}"></th>
+<br><br>
+<th><label>Площадь жилья кв.м</label><input th:value="${calculation.square}"></th>
+<br><br>
+<br><br>
+<button class="btn btn-default" onclick="location.href='/api/v1.0/calculation/prize'" th:value="${calculation}" type="button">Рассчитать</button>
+<br><br>
+<th><label>Дата расчета </label><input th:value="${calculation.contractDate}"></th>
+<th><label>Дата расчета </label><input th:value="${calculation.prize}"></th>
+</body>
+</html>
